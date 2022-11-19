@@ -11,14 +11,14 @@ npm install -g ts-node
 # Pour pouvoir générer un fichier js a partir du typescript on utilise
 npx tsc index.ts
 
-# pour pouvoir lire ce qui se trouve dans le fichier ts on lance
+# Pour pouvoir lire ce qui se trouve dans le fichier ts on lance
 npx ts-node index.ts
 node index.js
 
-# pour effectuer des modifications on modifie le fichier typescript puis on compile
+# Pour effectuer des modifications on modifie le fichier typescript puis on compile
 Notez que le app.js est le fichier de sortie du app.ts par conséquent, vous ne devez jamais modifier directement le code dans ce fichier, sinon vous perdrez les modifications une fois que vous aurez recompilé le app.ts dossier. 
 
-# problème de typage 
+# Problème de typage 
 Pour pouvoir voir le type du variable en js on utilise le typeOf()
 
 Comme vous pouvez le voir, dès que la valeur est affectée, le type de la variable change. 
@@ -172,11 +172,72 @@ Par exemple, vous pouvez utiliser un tuple pour définir une couleur RVB qui se 
 
 Depuis TypeScript 3.0, un tuple peut avoir des éléments facultatifs spécifiés à l'aide du suffixe point d'interrogation (?). 
 
+```bash
 let bgColor, headerColor: [number, number, number, number?];
-
+```
 Un tuple est un tableau avec un nombre fixe d'éléments dont les types sont connus. 
 
 # Type Enum
+Une énumération est un groupe de valeurs constantes nommées. Enum signifie type énuméré.
+
+Pour définir une énumération, procédez comme suit :
+
+. Tout d'abord, utilisez le enum mot-clé suivi du nom de l'énumération.
+. Ensuite, définissez des valeurs constantes pour l'énumération. 
+
+Comme vous pouvez le voir clairement à partir de la sortie, une énumération TypeScript est un objet en JavaScript. Cet objet a des propriétés nommées déclarées dans l'énumération. 
+
+L'objet généré possède également des clés numériques avec des valeurs de chaîne représentant les constantes nommées.
+
+C'est pourquoi vous pouvez passer un nombre dans la fonction qui accepte une énumération. En d'autres termes, un membre enum est à la fois un nombre et une constante définie. 
+
+Il est possible de spécifier explicitement des nombres pour les membres d'une énumération
+
+Vous devez utiliser une énumération lorsque vous :
+
+. Avoir un petit ensemble de valeurs fixes qui sont étroitement liées
+. Et ces valeurs sont connues au moment de la compilation. 
+
+# Type any
+Il permet d'affecter une valeur de n'importe quel type à une variable
+
+Il permet aussi de travailler avec la base de code JavaScript existante. Il vous permet d'activer et de désactiver progressivement la vérification de type lors de la compilation. Par conséquent, vous pouvez utiliser le any type pour migrer un projet JavaScript vers TypeScript. 
+
+Si on déclare une variable sans spécifier de type, TypeScript suppose que vous utilisez le any type. Cette fonctionnalité est appelée inférence de type . Fondamentalement, TypeScript devine le type de la variable.
+
+````
+Notez que pour désactiver le typage implicite dans le any type, vous modifiez le noImplicitAny possibilité dans le tsconfig.json fichier à vrai.
+````
+
+# Type void
+Il dénote l'absence de tout type. C'est un peu le contraire de any type .
+
+En règle générale, vous utilisez le void type comme type de retour des fonctions qui ne retournent pas de valeur
+
+C'est une bonne pratique d'ajouter le void type comme type de retour d'une fonction ou d'une méthode qui ne retourne aucune valeur. En faisant cela, vous pouvez bénéficier des avantages suivants :
+
+. Améliorez la clarté du code : vous n'avez pas à lire tout le corps de la fonction pour voir si elle renvoie quelque chose.
+. Assurez-vous que le type est sûr : vous n'assignerez jamais la fonction avec le void type de retour à une variable. 
+
+# Never type
+C'est un type qui ne contient aucune valeur. Pour cette raison, vous ne pouvez pas affecter de valeur à une variable avec un never type.
+
+En règle générale, vous utilisez le never type pour représenter le type de retour d'une fonction qui génère toujours une erreur
+
+Il représente le type de retour d'une fonction qui renvoie toujours une erreur ou d'une fonction qui contient une boucle indéfinie. 
+
+# Type d'union
+Le type d'union vous permet de combiner plusieurs types en un seul type. 
+
+````
+let result: number | string;
+````
+Un type d'union décrit une valeur qui peut être l'un de plusieurs types, pas seulement deux
+
+# Alias type
+Les alias de type vous permettent de créer un nouveau nom pour un type existant
+
+Il est utile de créer des alias de type pour les types d'union
 
 ## Les conditions
 
