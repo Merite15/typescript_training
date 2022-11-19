@@ -1,8 +1,6 @@
 var message = "Hello, World!";
-// create a new heading 1 element
 var heading = document.createElement("h1");
 heading.textContent = message;
-// add the heading the document
 document.body.appendChild(heading);
 var counter;
 counter = 1;
@@ -26,3 +24,21 @@ var state = 'hello';
 var firstName = "John";
 var title = "Web Developer";
 var profile = "I'm ".concat(firstName, ". \nI'm a ").concat(title);
+// Type boolean
+var pending;
+pending = true;
+// Type object
+var employee;
+employee = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25,
+    jobTitle: 'Web Developer'
+};
+console.log(employee);
+// Type vide
+var vacant;
+// Type tuple
+var skill;
+skill = ['Programming', 5];
+console.log(skill);

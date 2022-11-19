@@ -1,9 +1,9 @@
 let message: string = "Hello, World!";
-// create a new heading 1 element
+
 let heading = document.createElement("h1");
 
 heading.textContent = message;
-// add the heading the document
+
 document.body.appendChild(heading);
 
 let counter: number;
@@ -41,3 +41,43 @@ let firstName: string = `John`;
 let title: string = `Web Developer`;
 let profile: string = `I'm ${firstName}. 
 I'm a ${title}`;
+
+// Type boolean
+let pending: boolean;
+
+pending = true;
+
+// Type object
+let employee: object;
+
+employee = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 25,
+    jobTitle: 'Web Developer'
+};
+
+console.log(employee);
+
+// Type vide
+let vacant: {};
+
+// Type tuple
+let skill: [string, number];
+
+skill = ['Programming', 5];
+
+console.log(skill);
+
+let color: [number, number, number] = [255, 0, 0];
+
+// Tuple facultatif
+let  headerColor: [number, number, number, number?];
+
+let  bgColor: [number, number, number, number?];
+
+bgColor = [0, 255, 255, 0.5];
+
+headerColor = [0, 255, 255];
+
+
